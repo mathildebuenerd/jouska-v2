@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Statistiques</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item
+            *ngFor="let contact of contactList"
+            (click)="onLoadContactStats(contact)">
+      {{ contact.name }}
+    </button>
+  </ion-list>
+</ion-content>
+
+<!--<ion-footer padding>-->
+  <!--<p>C'est le bas de page</p>-->
+<!--</ion-footer>-->
