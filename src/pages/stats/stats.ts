@@ -7,7 +7,7 @@ import {TextAnalysisService} from "../../services/textAnalysis.service";
   selector: 'page-stats',
   templateUrl: 'stats.html'
 })
-export class StatsPage implements OnInit{
+export class StatsPage implements OnInit {
 
   contactList = [
     {
@@ -39,7 +39,7 @@ export class StatsPage implements OnInit{
   constructor(private navCtrl: NavController,
               private textAnalysisService: TextAnalysisService) // inject the textAnalysis service
   {
-    let myVar = this.textAnalysisService.darktriadAnalysis('hello wonderful');
+    let myVar = this.textAnalysisService.sentimentAnalysis('hello wonderful, I feel bad today');
     console.log(myVar);
   }
 

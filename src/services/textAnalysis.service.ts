@@ -75,6 +75,8 @@ export class TextAnalysisService {
       return sentiment(message, language, originalMessage);
     }
 
+
+
   }
 
   public darktriadAnalysis(textMessage: string, opts: object = {"output": "matches"}) {
