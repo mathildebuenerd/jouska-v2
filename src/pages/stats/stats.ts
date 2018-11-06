@@ -39,7 +39,7 @@ export class StatsPage implements OnInit {
   constructor(private navCtrl: NavController,
               private textAnalysisService: TextAnalysisService) // inject the textAnalysis service
   {
-    let myVar = this.textAnalysisService.sentimentAnalysis('hello wonderful, I feel bad today');
+    let myVar = this.textAnalysisService.selfishnessAnalysis('tu vas bien?');
     console.log(myVar);
   }
 

@@ -36,10 +36,9 @@ var DashboardPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-dashboard',template:/*ion-inline-start:"H:\WebstormProjects\jouska-v2\src\pages\dashboard\dashboard.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"H:\WebstormProjects\jouska-v2\src\pages\dashboard\dashboard.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], DashboardPage);
     return DashboardPage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=dashboard.js.map
@@ -82,9 +81,10 @@ var SettingsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-settings',template:/*ion-inline-start:"H:\WebstormProjects\jouska-v2\src\pages\settings\settings.html"*/'<!--\n  Generated template for the SettingsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="outer-content">\n  <ion-list>\n    <ion-list-header>Positivité requise pour l\'envoi d\'un message</ion-list-header>\n    <ion-item>\n      <ion-range color="blue" min="0" max="100" pin="true">\n        <ion-icon range-left name=""></ion-icon>\n        <ion-icon range-right name=""></ion-icon>\n      </ion-range>\n    </ion-item>\n  </ion-list>\n\n  <ion-list>\n    <ion-list-header>Notifications</ion-list-header>\n    <ion-item>\n      <ion-label>Jour de la semaine le plus positif</ion-label>\n      <ion-toggle checked="true"></ion-toggle>\n    </ion-item>\n    <ion-item>\n      <ion-label>Heure de la journée la plus positive</ion-label>\n      <ion-toggle checked="true"></ion-toggle>\n    </ion-item>\n  </ion-list>\n\n\n</ion-content>\n'/*ion-inline-end:"H:\WebstormProjects\jouska-v2\src\pages\settings\settings.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
     ], SettingsPage);
     return SettingsPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=settings.js.map
@@ -127,10 +127,9 @@ var MessagesPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-messages',template:/*ion-inline-start:"H:\WebstormProjects\jouska-v2\src\pages\messages\messages.html"*/'<!--\n  Generated template for the MessagesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Messages</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"H:\WebstormProjects\jouska-v2\src\pages\messages\messages.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], MessagesPage);
     return MessagesPage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=messages.js.map
@@ -144,6 +143,7 @@ var MessagesPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WritingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_writingAnalysis_service__ = __webpack_require__(399);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -155,6 +155,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the WritingPage page.
  *
@@ -162,9 +163,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var WritingPage = /** @class */ (function () {
-    function WritingPage(navCtrl, navParams) {
+    function WritingPage(navCtrl, navParams, writingAnalysis) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.writingAnalysis = writingAnalysis;
+        console.log(this.writingAnalysis);
     }
     WritingPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad WritingPage');
@@ -173,10 +176,10 @@ var WritingPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-writing',template:/*ion-inline-start:"H:\WebstormProjects\jouska-v2\src\pages\writing\writing.html"*/'<!--\n  Generated template for the WritingPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Nouveau message</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n    <ion-label floating>Contact</ion-label>\n    <ion-input  type="text"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Message</ion-label>\n    <ion-textarea  type="textarea"></ion-textarea>\n  </ion-item>\n\n  <button ion-button type="submit">\n    <ion-icon name="send" padding-right></ion-icon>\n    Envoyer\n  </button>\n</ion-content>\n'/*ion-inline-end:"H:\WebstormProjects\jouska-v2\src\pages\writing\writing.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_writingAnalysis_service__["a" /* WritingAnalysisService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_writingAnalysis_service__["a" /* WritingAnalysisService */]) === "function" && _c || Object])
     ], WritingPage);
     return WritingPage;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=writing.js.map
@@ -270,7 +273,7 @@ var TabsPage = /** @class */ (function () {
     }
     TabsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tabs',template:/*ion-inline-start:"H:\WebstormProjects\jouska-v2\src\pages\tabs\tabs.html"*/'<ion-tabs [selectedIndex]="3">\n  <ion-tab [root]="dashboardPage" tabTitle="Dashboard" tabIcon="home"></ion-tab>\n  <ion-tab [root]="messagesPage" tabTitle="Messages" tabIcon="chatbubbles"></ion-tab>\n  <ion-tab [root]="writingPage" tabTitle="Ecrire" tabIcon="create"></ion-tab>\n  <ion-tab [root]="statsPage" tabTitle="Statistiques" tabIcon="analytics"></ion-tab>\n  <ion-tab [root]="settingsPage" tabTitle="Paramètres" tabIcon="settings"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"H:\WebstormProjects\jouska-v2\src\pages\tabs\tabs.html"*/
+            selector: 'page-tabs',template:/*ion-inline-start:"H:\WebstormProjects\jouska-v2\src\pages\tabs\tabs.html"*/'<ion-tabs [selectedIndex]="2">\n  <ion-tab [root]="dashboardPage" tabTitle="Dashboard" tabIcon="home"></ion-tab>\n  <ion-tab [root]="messagesPage" tabTitle="Messages" tabIcon="chatbubbles"></ion-tab>\n  <ion-tab [root]="writingPage" tabTitle="Ecrire" tabIcon="create"></ion-tab>\n  <ion-tab [root]="statsPage" tabTitle="Statistiques" tabIcon="analytics"></ion-tab>\n  <ion-tab [root]="settingsPage" tabTitle="Paramètres" tabIcon="settings"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"H:\WebstormProjects\jouska-v2\src\pages\tabs\tabs.html"*/
         })
     ], TabsPage);
     return TabsPage;
@@ -332,7 +335,7 @@ var StatsPage = /** @class */ (function () {
                 ]
             }
         ];
-        var myVar = this.textAnalysisService.sentimentAnalysis('hello wonderful, I feel bad to day');
+        var myVar = this.textAnalysisService.selfishnessAnalysis('tu vas bien?');
         console.log(myVar);
     }
     StatsPage.prototype.onLoadContactStats = function (contactInfos) {
@@ -389,10 +392,9 @@ var SingleContactStatsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-single-contact-stats',template:/*ion-inline-start:"H:\WebstormProjects\jouska-v2\src\pages\stats\single-contact-stats\single-contact-stats.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ name }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>{{ contactInfos.name }}</ion-card-header>\n    <ion-card-content>\n      <p *ngFor="let line of contactInfos.description">{{ line }}</p>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"H:\WebstormProjects\jouska-v2\src\pages\stats\single-contact-stats\single-contact-stats.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], SingleContactStatsPage);
     return SingleContactStatsPage;
-    var _a;
 }());
 
 //# sourceMappingURL=single-contact-stats.js.map
@@ -404,8 +406,8 @@ var SingleContactStatsPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TextAnalysisService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_node_sentiment__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_node_sentiment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_node_sentiment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_node_sentiment_jouska__ = __webpack_require__(400);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_node_sentiment_jouska___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_node_sentiment_jouska__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_darktriad__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_darktriad___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_darktriad__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_bigfive__ = __webpack_require__(331);
@@ -414,25 +416,23 @@ var SingleContactStatsPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_predictgender___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_predictgender__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prospectimo__ = __webpack_require__(335);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prospectimo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_prospectimo__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_translate__ = __webpack_require__(337);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_translate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_translate__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_selfishness_analysis__ = __webpack_require__(402);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_selfishness_analysis___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_selfishness_analysis__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_translate__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_translate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_translate__);
 
 
 
 
 
-// import * as selfishness from "node-sentiment-selfishness";
+
 
 var TextAnalysisService = /** @class */ (function () {
     function TextAnalysisService() {
-        this.maVariable = "hello";
-        // public selfishnessAnalysis(textMessage: string, language: string = 'fr'): object {
-        //   return selfishness(textMessage, language); // pour l'instant on le fait juste en français
-        // }
         this.translateToEnglish = function (sentence) {
             return new Promise(function (resolve, reject) {
                 var text = "";
-                __WEBPACK_IMPORTED_MODULE_5_translate__(sentence, { to: 'en' })
+                __WEBPACK_IMPORTED_MODULE_6_translate__(sentence, { to: 'en' })
                     .then(function (translatedText) {
                     // console.log(`translatedText: ${translatedText}`);
                     text = translatedText;
@@ -494,12 +494,12 @@ var TextAnalysisService = /** @class */ (function () {
         if (Array.isArray(message)) {
             var analysis = []; // on crée un tableau pour stocker les analyses
             for (var clause in message) {
-                analysis.push(__WEBPACK_IMPORTED_MODULE_0_node_sentiment__(message[clause], language, originalMessage));
+                analysis.push(__WEBPACK_IMPORTED_MODULE_0_node_sentiment_jouska__(message[clause], language, originalMessage));
             }
             return analysis; // on retourne le tableau
         }
         else {
-            return __WEBPACK_IMPORTED_MODULE_0_node_sentiment__(message, language, originalMessage);
+            return __WEBPACK_IMPORTED_MODULE_0_node_sentiment_jouska__(message, language, originalMessage);
         }
     };
     TextAnalysisService.prototype.darktriadAnalysis = function (textMessage, opts) {
@@ -517,6 +517,10 @@ var TextAnalysisService = /** @class */ (function () {
     TextAnalysisService.prototype.temporalOrientationPrediction = function (textMessage, language) {
         if (language === void 0) { language = 'en'; }
         return __WEBPACK_IMPORTED_MODULE_4_prospectimo__(textMessage);
+    };
+    TextAnalysisService.prototype.selfishnessAnalysis = function (textMessage, language) {
+        if (language === void 0) { language = 'fr'; }
+        return __WEBPACK_IMPORTED_MODULE_5_selfishness_analysis__(textMessage, language); // pour l'instant on le fait juste en français
     };
     return TextAnalysisService;
 }());
@@ -715,6 +719,321 @@ webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
 webpackEmptyContext.id = 391;
+
+/***/ }),
+
+/***/ 399:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WritingAnalysisService; });
+var WritingAnalysisService = /** @class */ (function () {
+    function WritingAnalysisService(textAnalysisService) {
+        var _this = this;
+        this.textAnalysisService = textAnalysisService;
+        this.startAssistance = function () {
+            var textArea = document.querySelector('#smsContent');
+            textArea.addEventListener('keyup', _this.analyzeText); // keypress ne fontionne pas avec le clavier android, il faut utiliser keyup
+            var sendButton = document.querySelector('#sendMessage');
+            // sendButton.addEventListener('click', this.sendMessage);
+        };
+        this.changeSidebar = function (barSelector, score) {
+            // console.log(`bar selector`, barSelector);
+            var sidebar = document.querySelector("#" + barSelector + " .fill");
+            // console.log(`barselector:`, barSelector);
+            sidebar.style.backgroundImage = "url(img/interface-components/jauges/jauge_" + score + ".png";
+        };
+        this.getColor = function (object, value) {
+            if (value > 8) {
+                value = 8;
+            }
+            else if (value < -8) {
+                value = -8;
+            }
+            return Object.keys(object).find(function (key) { return object[key] === value; });
+        };
+        this.getSentence = function () {
+            var textArea = document.querySelector('#smsContent'); // c'est pas un textArea mais un bloc avec contenteditable
+            var text = textArea.textContent;
+            var allWords = new RegExp(/.+/, 'gim'); // récupère tous les mots
+            var sentence = text.match(allWords);
+            // const letters = new RegExp(/\S/, 'gi');
+            // sentence[0] est parfois égal à plein d'espaces ('     '), pour être sûr qu'il y a bien du texte, on vérifie qu'il y ai une lettre
+            // if (letters.test(sentence[0])) {
+            // console.log(`sentence 0`, sentence[0]);
+            return sentence[0]; // match renvoie un tableau de correspondances, mais avec la regex il n'est sensé renvoyer qu'un seul tableau
+            // } else {
+            //     console.warn(`sentence n'existe pas, elle est égale à ${sentence} et est de type ${typeof sentence}`);
+            // }
+        };
+        this.showFeedback = function (analysis, type) {
+            console.log("showFeedback", "analysis", analysis, "type", type);
+            var score = 0;
+            var otherAnalysis = ["psychopathy", "conscientiousness", "openness"];
+            if (type === "polarity" || type === "selfishness") {
+                if (analysis['score'] !== undefined) {
+                    score += analysis['score'];
+                }
+                else {
+                    for (var object in analysis) {
+                        // console.log(`score ${type}: ${analysis[object]['score']}`);
+                        score += analysis[object]['score'];
+                    }
+                }
+                // les analyses de la liste triad donnent directement le score
+            }
+            else if (otherAnalysis.indexOf(type) !== -1) {
+                score = analysis;
+            }
+            // let color = this.getColor(this.colors, score);
+            var scoreBar = _this.getSidebarNumber(score);
+            _this.changeSidebar(type, scoreBar);
+            // if (analysis["negative"].length > 0) {
+            //     // this.animateNegativeWords(analysis["negative"]);
+            // }
+        };
+        this.analyzeText = function () {
+            var language = 'fr';
+            var sentence = _this.getSentence();
+            // console.log(`sentence`, sentence);
+            if (sentence !== undefined) {
+                // Analyses en français
+                // sentence peut être undefined s'il y a trop peu de lettres
+                var polarity = _this.textAnalysisService.sentimentAnalysis(sentence, language);
+                _this.showFeedback(polarity, "polarity");
+                var selfish = _this.textAnalysisService.selfishnessAnalysis(sentence, language);
+                _this.showFeedback(selfish, "selfishness");
+                // Analyses en anglais
+                // Pour ces analyses, on traduit en anglais avant d'analyser
+                // D'abord on récupère uniquement les mots entiers
+                var ignoreLastWord = new RegExp(/.+[ !?,.:"]/, 'gim');
+                // const test = sentence.split(" ");
+                // console.log(`test: `, test);
+                var allWordsExceptLast = sentence.match(ignoreLastWord); // match renvoie un tableau de correspondances, mais avec la regex il n'est sensé renvoyer qu'un seul tableau
+                // console.log(`allwordsexc`, allWordsExceptLast);
+                var wordsToAnalyze = String(allWordsExceptLast);
+                _this.tempSentences[1] = wordsToAnalyze;
+                // Si ces deux valeurs sont différentes, c'est qu'il y a un mot de plus ou de moins
+                if (_this.tempSentences[1] !== _this.tempSentences[0]) {
+                    // console.log(`c'est different`, this.tempSentences[1], this.tempSentences[0]);
+                    _this.tempSentences[0] = wordsToAnalyze;
+                    console.log("wordsToAnalyze", wordsToAnalyze);
+                    // traduit la phrase, ce qui prend un peu de temps (promesse)
+                    // quand la phrase est traduite, on lance l'analyse
+                    if (wordsToAnalyze !== null) {
+                        _this.textAnalysisService.translateToEnglish(wordsToAnalyze)
+                            .then(function (englishSentence) {
+                            console.log("la promesse semble r\u00E9ussir");
+                            // console.log(`english sentence: ${englishSentence}`);
+                            var darktriad = _this.textAnalysisService.darktriadAnalysis(englishSentence);
+                            console.log("darktriad", darktriad);
+                            // const bigfive = textAnalysis.personalityAnalysis(englishSentence);
+                            // console.log("bigfive", bigfive);
+                            var interpretationDarkriad = _this.interpretAnalysis("darktriad", darktriad);
+                            // const interpretationBigfive = this.interpretAnalysis("bigfive", bigfive);
+                            // for (const trait in interpretation) {
+                            console.log("interpretationdark", interpretationDarkriad);
+                            // console.log("interpretationbigf", interpretationBigfive);
+                            // select criteria in psychopathy
+                            var traitDarktriad = "psychopathy";
+                            _this.showFeedback(interpretationDarkriad[traitDarktriad].score, String(traitDarktriad));
+                            var traitBigfive = ["conscientiousness", "openness"];
+                            // for (let i=0; i<traitBigfive.length; i++) {
+                            //     // console.log(`intrepret`, traitBigfive[i]);
+                            //     const subkey = traitBigfive[i];
+                            //     this.showFeedback(interpretationBigfive[subkey].score, String(traitBigfive[i]));
+                            // }
+                        })
+                            .catch(function (err) { return console.log(err); });
+                    }
+                }
+                else {
+                }
+            }
+        };
+        this.interpretAnalysis = function (type, analysis) {
+            var analyses = {};
+            var analysesDark = {
+                "triad": {
+                    "score": 0,
+                    "negativeWords": [],
+                    "positiveWords": []
+                },
+                "narcissism": {
+                    "score": 0,
+                    "negativeWords": [],
+                    "positiveWords": []
+                },
+                "machiavellianism": {
+                    "score": 0,
+                    "negativeWords": [],
+                    "positiveWords": []
+                },
+                "psychopathy": {
+                    "score": 0,
+                    "negativeWords": [],
+                    "positiveWords": []
+                },
+            };
+            var analysesBigfive = {
+                "openness": {
+                    "score": 0,
+                    "negativeWords": [],
+                    "positiveWords": []
+                },
+                "conscientiousness": {
+                    "score": 0,
+                    "negativeWords": [],
+                    "positiveWords": []
+                },
+                "extraversion": {
+                    "score": 0,
+                    "negativeWords": [],
+                    "positiveWords": []
+                },
+                "agreeableness": {
+                    "score": 0,
+                    "negativeWords": [],
+                    "positiveWords": []
+                },
+                "neuroticism": {
+                    "score": 0,
+                    "negativeWords": [],
+                    "positiveWords": []
+                },
+            };
+            if (type === "darktriad") {
+                analyses = analysesDark;
+                for (var trait in analysis) {
+                    // on vérifie que le tableau contient bien quelque chose
+                    if (analysis[trait] !== []) {
+                        for (var word in analysis[trait]) {
+                            var _word = analysis[trait][word][0]; // correspond au mot (chaine de caractère)
+                            // console.log(`_word`, _word, `analysis`, analysis, `trait`, trait);
+                            var wordScore = analysis[trait][word][3]; // le quatrième élément correspond à la valeur relative du mot
+                            // si le score du mot est positif, ça veut dire que la darktriad est haute, donc c'est plutôt négatif. dans tous les cas on arrondi à 1 pour simplifier
+                            if (wordScore > 0) {
+                                analyses[trait].score--;
+                                analyses[trait].negativeWords.push(_word);
+                            }
+                            else {
+                                analyses[trait].score++;
+                                analyses[trait].positiveWords.push(_word);
+                            }
+                        }
+                    }
+                }
+            }
+            else if (type === "bigfive") {
+                analyses = analysesBigfive;
+                for (var trait in analysis) {
+                    // on regarde si le tableau n'est pas vide
+                    if (analysis[trait].matches !== []) {
+                        for (var i = 0; i < analysis[trait].matches.length; i++) {
+                            var _word = analysis[trait].matches[i][0]; // correspond au mot (chaine de caractère)
+                            var wordScore = analysis[trait].matches[i][3]; // le quatrième élément correspond à la valeur relative du mot
+                            // si le score du mot est positif, ça veut dire que la darktriad est haute, donc c'est plutôt négatif. dans tous les cas on arrondi à 1 pour simplifier
+                            if (wordScore > 0) {
+                                analyses[trait].score--;
+                                analyses[trait].negativeWords.push(_word);
+                            }
+                            else {
+                                analyses[trait].score++;
+                                analyses[trait].positiveWords.push(_word);
+                            }
+                        }
+                    }
+                }
+            }
+            // console.log(`analyses`, analyses);
+            // on renvoie la score moyen, ainsi que les mots qui ont influencé globalement le score
+            return analyses;
+        };
+        this.animateNegativeWords = function (words) {
+            // console.log(`words:`);
+            // console.log(words);
+            var textArea = document.querySelector('#smsContent');
+            for (var word in words) {
+                var slicedWord = _this.sliceWord(words[word], "negative");
+                // console.log(`slicedWord:`);
+                // console.log(slicedWord);
+                // console.log(`textarea.value: ${textArea.textContent}`);
+                var toReplace = new RegExp("" + words[word], 'gi');
+                textArea.innerHTML = (textArea.textContent).replace(toReplace, slicedWord);
+            }
+            var wordsToAnimate = document.querySelectorAll(".negative");
+            if (wordsToAnimate !== undefined) {
+                for (var singleWord in wordsToAnimate) {
+                    var lettersToAnimate = wordsToAnimate[singleWord].querySelectorAll("span");
+                    for (var letter in lettersToAnimate) {
+                        var aLetter = lettersToAnimate[letter];
+                        var randomValue = Math.floor(Math.random() * 3); // on a trois animations différentes
+                        aLetter.style.animationName = "marionettes" + randomValue;
+                    }
+                }
+            }
+            // pour gérer les balises html dans contenteditable
+            // https://stackoverflow.com/questions/41433796/html-elements-inside-contenteditable
+            // const map = {amp: '&', lt: '<', gt: '>', quot: '"', '#039': "'"}
+            // let html = textArea.innerHTML.replace(/&([^;]+);/g, (m, c) => map[c]);
+            // textArea.innerHTML = html;
+            // this.setEndOfContenteditable(textArea); // est sensé ramener le curseur à la fin de la ligne
+        };
+        this.setEndOfContenteditable = function (contentEditableElement) {
+            var range, selection;
+            range = document.createRange(); //Create a range (a range is a like the selection but invisible)
+            range.selectNodeContents(contentEditableElement); //Select the entire contents of the element with the range
+            range.collapse(false); //collapse the range to the end point. false means collapse to end rather than the start
+            selection = window.getSelection(); //get the selection object (allows you to change selection)
+            selection.removeAllRanges(); //remove any selections already made
+            selection.addRange(range); //make the range you have just created the visible selection
+        };
+        this.colors = {
+            "a5f31b": 8,
+            "a4ed2b": 7,
+            "a2e739": 6,
+            "a1dc52": 5,
+            "a1d16b": 4,
+            "a1c087": 3,
+            "a1b595": 2,
+            "a1a69f": 1,
+            "a39ba1": 0,
+            "ae849b": -1,
+            "b57794": -2,
+            "c26185": -3,
+            "cf4c74": -4,
+            "db3863": -5,
+            "e82551": -6,
+            "f21542": -7,
+            "fb0736": -8
+        };
+        this.tempSentences = ["", ""]; // on utilise cette variable pour optimiser l'usage de le fonction de traduction. On stocke la dernière phrase traduite dedans, et on checke ensuite chaque fois qu'une touche est pressée pour comparer et voir s'il y a un mot supplémentaire
+    }
+    WritingAnalysisService.prototype.getSidebarNumber = function (score) {
+        // le score est usuellement un nombre entre -8 et 8
+        // comme les jauges sont numérotées de 0 à 16, on commence en soustrayant 8
+        var value = score + 8;
+        // ensuite, si les valeurs sont trop hautes ou trop basses, on égalise
+        if (score > 8) {
+            value = 8;
+        }
+        else if (score < -8) {
+            value = -8;
+        }
+        return value;
+    };
+    WritingAnalysisService.prototype.sliceWord = function (word, elmtClass) {
+        var tag = "<span class=\"" + elmtClass + "\">";
+        for (var letter = 0; letter < word.length; letter++) {
+            tag += "<span>" + word[letter] + "</span>"; // on ajoute chaque lettre entourée d'un span, comme ça on pourra les animer séparement
+        }
+        tag += "</span>";
+        return tag;
+    };
+    return WritingAnalysisService;
+}());
+
+//# sourceMappingURL=writingAnalysis.service.js.map
 
 /***/ })
 

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {TextAnalysisService} from "../../services/textAnalysis.service";
+import {WritingAnalysisService} from "../../services/writingAnalysis.service";
 
 /**
  * Generated class for the WritingPage page.
@@ -15,7 +17,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class WritingPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private writingAnalysis: WritingAnalysisService) {
+    console.log(this.writingAnalysis);
   }
 
   ionViewDidLoad() {

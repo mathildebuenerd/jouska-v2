@@ -1,15 +1,12 @@
-import * as sentiment from "node-sentiment";
+import * as sentiment from "node-sentiment-jouska";
 import * as darktriad from "darktriad";
 import * as bigfive from "bigfive";
 import * as predictgender from "predictgender";
 import * as prospectimo from "prospectimo";
-// import * as selfishness from "node-sentiment-selfishness";
+import * as selfishness from "selfishness-analysis";
 import * as gtranslate from "translate";
 
 export class TextAnalysisService {
-
-  maVariable: string = "hello";
-
 
   constructor() {
   }
@@ -95,9 +92,9 @@ export class TextAnalysisService {
     return prospectimo(textMessage);
   }
 
-  // public selfishnessAnalysis(textMessage: string, language: string = 'fr'): object {
-  //   return selfishness(textMessage, language); // pour l'instant on le fait juste en français
-  // }
+  public selfishnessAnalysis(textMessage: string, language: string = 'fr'): object {
+    return selfishness(textMessage, language); // pour l'instant on le fait juste en français
+  }
 
   translateToEnglish=(sentence: string): Promise<string> => {
     return new Promise((resolve, reject) => {
