@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NavController, NavParams} from "ionic-angular";
 import { SingleContactStatsPage } from "./single-contact-stats/single-contact-stats";
+import {TextAnalysisService} from "../../services/textAnalysis.service";
 
 @Component({
   selector: 'page-stats',
   templateUrl: 'stats.html'
 })
-export class StatsPage {
+export class StatsPage implements OnInit{
 
   contactList = [
     {
@@ -35,10 +36,18 @@ export class StatsPage {
     }
   ];
 
-  constructor(private navCtrl: NavController) {
+  constructor(private navCtrl: NavController,
+              private textAnalysisService: TextAnalysisService) // inject the textAnalysis service
+  {
+    let myVar = this.textAnalysisService.darktriadAnalysis('hello wonderful');
+    console.log(myVar);
   }
 
   onLoadContactStats(contactInfos: {name: string, description: string[]}) {
     this.navCtrl.push(SingleContactStatsPage, {contactInfos: contactInfos});
+  }
+
+  ngOnInit(): void {
+
   }
 }

@@ -13,6 +13,8 @@ import {MessagesPage} from "../pages/messages/messages";
 import {WritingPage} from "../pages/writing/writing";
 import {DashboardPage} from "../pages/dashboard/dashboard";
 
+import { TextAnalysisService } from "../services/textAnalysis.service";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -42,6 +44,7 @@ import {DashboardPage} from "../pages/dashboard/dashboard";
   providers: [
     StatusBar,
     SplashScreen,
+    TextAnalysisService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
