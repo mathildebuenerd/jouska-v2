@@ -19,12 +19,13 @@
     <ion-input  type="text"></ion-input>
   </ion-item>
 
-  <ion-item>
+  <ion-item id="message-area">
     <ion-label floating>Message</ion-label>
-    <ion-textarea  type="textarea"></ion-textarea>
+    <ion-textarea type="textarea"
+                  [(ngModel)]="messageInput"></ion-textarea>
   </ion-item>
 
-  <button ion-button type="submit">
+  <button id="send-message-button" ion-button type="submit">
     <ion-icon name="send" padding-right></ion-icon>
     Envoyer
   </button>

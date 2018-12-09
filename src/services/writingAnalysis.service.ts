@@ -1,10 +1,13 @@
-import {TextAnalysisService} from "./textAnalysis.service";
+import {Injectable} from "@angular/core";
+import { TextAnalysisService } from "./textAnalysis.service";
 
-
+// As this service also use the TextAnalysis service, we have to use @Injectable
+@Injectable()
 export class WritingAnalysisService {
 
   colors: object;
   tempSentences: Array<string>;
+  private messageInput: string;
 
   constructor(private textAnalysisService: TextAnalysisService) {
     this.colors = {
@@ -27,16 +30,8 @@ export class WritingAnalysisService {
       "fb0736": -8
     };
     this.tempSentences = ["", ""]; // on utilise cette variable pour optimiser l'usage de le fonction de traduction. On stocke la dernière phrase traduite dedans, et on checke ensuite chaque fois qu'une touche est pressée pour comparer et voir s'il y a un mot supplémentaire
+    console.log("constructor WritingAnalysisService")
   }
-
-  startAssistance= () => {
-
-    const textArea = <HTMLElement>document.querySelector('#smsContent');
-    textArea.addEventListener('keyup', this.analyzeText); // keypress ne fontionne pas avec le clavier android, il faut utiliser keyup
-
-    const sendButton = <HTMLElement>document.querySelector('#sendMessage');
-    // sendButton.addEventListener('click', this.sendMessage);
-  };
 
   public changeSidebar= (barSelector: string, score: number) => {
     // console.log(`bar selector`, barSelector);
@@ -70,23 +65,6 @@ export class WritingAnalysisService {
 
   }
 
-  getSentence= (): string => {
-
-    const textArea = <HTMLElement>document.querySelector('#smsContent'); // c'est pas un textArea mais un bloc avec contenteditable
-    const text = textArea.textContent;
-    const allWords = new RegExp(/.+/, 'gim'); // récupère tous les mots
-    const sentence = text.match(allWords);
-    // const letters = new RegExp(/\S/, 'gi');
-
-    // sentence[0] est parfois égal à plein d'espaces ('     '), pour être sûr qu'il y a bien du texte, on vérifie qu'il y ai une lettre
-    // if (letters.test(sentence[0])) {
-    // console.log(`sentence 0`, sentence[0]);
-    return sentence[0]; // match renvoie un tableau de correspondances, mais avec la regex il n'est sensé renvoyer qu'un seul tableau
-    // } else {
-    //     console.warn(`sentence n'existe pas, elle est égale à ${sentence} et est de type ${typeof sentence}`);
-    // }
-  };
-
   showFeedback= (analysis: any, type: string) => {
     console.log(`showFeedback`, `analysis`, analysis, `type`, type);
 
@@ -117,77 +95,27 @@ export class WritingAnalysisService {
     // }
   };
 
-  public analyzeText=() => {
+  public analyzeText=(sentence: string, language: string = "en") => {
 
-    const language = 'fr';
-    let sentence = this.getSentence();
-    // console.log(`sentence`, sentence);
-
+    console.log("analyzeText function");
 
     if (sentence !== undefined) {
-      // Analyses en français
-      // sentence peut être undefined s'il y a trop peu de lettres
-      const polarity = this.textAnalysisService.sentimentAnalysis(sentence, language);
-      this.showFeedback(polarity, "polarity");
-      const selfish = this.textAnalysisService.selfishnessAnalysis(sentence, language);
-      this.showFeedback(selfish, "selfishness");
 
-      // Analyses en anglais
-      // Pour ces analyses, on traduit en anglais avant d'analyser
-      // D'abord on récupère uniquement les mots entiers
+      // Ignore the last word because it's not a full word
       const ignoreLastWord = new RegExp(/.+[ !?,.:"]/, 'gim');
-      // const test = sentence.split(" ");
-      // console.log(`test: `, test);
-      const allWordsExceptLast = sentence.match(ignoreLastWord); // match renvoie un tableau de correspondances, mais avec la regex il n'est sensé renvoyer qu'un seul tableau
-      // console.log(`allwordsexc`, allWordsExceptLast);
+      const allWordsExceptLast = sentence.match(ignoreLastWord); // with that regex, match is supposed to return a single sentence in an array
       const wordsToAnalyze = String(allWordsExceptLast);
 
-      this.tempSentences[1] = wordsToAnalyze;
-
-      // Si ces deux valeurs sont différentes, c'est qu'il y a un mot de plus ou de moins
-      if (this.tempSentences[1] !== this.tempSentences[0]) {
-        // console.log(`c'est different`, this.tempSentences[1], this.tempSentences[0]);
-        this.tempSentences[0] = wordsToAnalyze;
-
-        console.log("wordsToAnalyze", wordsToAnalyze);
-
-        // traduit la phrase, ce qui prend un peu de temps (promesse)
-        // quand la phrase est traduite, on lance l'analyse
-        if (wordsToAnalyze !== null) {
-          this.textAnalysisService.translateToEnglish(wordsToAnalyze)
-            .then((englishSentence) => {
-              console.log(`la promesse semble réussir`);
-              // console.log(`english sentence: ${englishSentence}`);
-              const darktriad = this.textAnalysisService.darktriadAnalysis(englishSentence);
-              console.log("darktriad", darktriad);
-
-              // const bigfive = textAnalysis.personalityAnalysis(englishSentence);
-              // console.log("bigfive", bigfive);
-
-              const interpretationDarkriad = this.interpretAnalysis("darktriad", darktriad);
-              // const interpretationBigfive = this.interpretAnalysis("bigfive", bigfive);
-              // for (const trait in interpretation) {
-
-              console.log("interpretationdark", interpretationDarkriad);
-              // console.log("interpretationbigf", interpretationBigfive);
-              // select criteria in psychopathy
-              const traitDarktriad = "psychopathy";
-              this.showFeedback(interpretationDarkriad[traitDarktriad].score, String(traitDarktriad));
-
-              const traitBigfive = ["conscientiousness", "openness"];
-              // for (let i=0; i<traitBigfive.length; i++) {
-              //     // console.log(`intrepret`, traitBigfive[i]);
-              //     const subkey = traitBigfive[i];
-              //     this.showFeedback(interpretationBigfive[subkey].score, String(traitBigfive[i]));
-              // }
-
-
-            })
-            .catch( err => console.log(err));
-        }
-      } else {
+      if (wordsToAnalyze !== 'null') {
+        const polarity = this.textAnalysisService.sentimentAnalysis(wordsToAnalyze, language);
+        // this.showFeedback(polarity, "polarity");
+        const selfish = this.textAnalysisService.selfishnessAnalysis(wordsToAnalyze, language);
+        // this.showFeedback(selfish, "selfishness");
+        console.log(`polarity`, polarity);
       }
+
     }
+
   };
 
   interpretAnalysis = (type: string, analysis: object): object => {
@@ -347,31 +275,31 @@ export class WritingAnalysisService {
     selection.addRange(range);//make the range you have just created the visible selection
   };
 
-  // sendMessage= () => {
-  //   const recipientElement = <HTMLInputElement>document.querySelector('#contactNumber');
-  //   const recipient = recipientElement.value;
-  //   const messageElement = <HTMLElement>document.querySelector('#smsContent');
-  //   const message = messageElement.textContent;
-  //   let confirmationMessage = document.querySelector('#confirmationMessage');
-  //
-  //   SMS.sendSMS(recipient, message, () => {
-  //     console.log(`sms envoyé! destinaire: ${recipient}; message: ${message}`);
-  //     recipientElement.value = "";
-  //     messageElement.textContent = "";
-  //     confirmationMessage.textContent = "Message correctement envoyé :)";
-  //     setTimeout(() => {
-  //       confirmationMessage.textContent = "";
-  //     },3000);
-  //
-  //     // on remet le listener sur le bouton
-  //     const sendButton = <HTMLElement>document.querySelector('#sendMessage');
-  //     sendButton.addEventListener('click', this.sendMessage);
-  //   }, (err) => {
-  //     confirmationMessage.textContent = `Il y a eu une erreur, le message n'est pas parti...
-  //           Erreur: ${err}`;
-  //     throw err;
-  //   });
-  //
-  // };
+// sendMessage= () => {
+//   const recipientElement = <HTMLInputElement>document.querySelector('#contactNumber');
+//   const recipient = recipientElement.value;
+//   const messageElement = <HTMLElement>document.querySelector('#smsContent');
+//   const message = messageElement.textContent;
+//   let confirmationMessage = document.querySelector('#confirmationMessage');
+//
+//   SMS.sendSMS(recipient, message, () => {
+//     console.log(`sms envoyé! destinaire: ${recipient}; message: ${message}`);
+//     recipientElement.value = "";
+//     messageElement.textContent = "";
+//     confirmationMessage.textContent = "Message correctement envoyé :)";
+//     setTimeout(() => {
+//       confirmationMessage.textContent = "";
+//     },3000);
+//
+//     // on remet le listener sur le bouton
+//     const sendButton = <HTMLElement>document.querySelector('#sendMessage');
+//     sendButton.addEventListener('click', this.sendMessage);
+//   }, (err) => {
+//     confirmationMessage.textContent = `Il y a eu une erreur, le message n'est pas parti...
+//           Erreur: ${err}`;
+//     throw err;
+//   });
+//
+// };
 
 }

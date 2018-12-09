@@ -5,6 +5,7 @@ import * as predictgender from "predictgender";
 import * as prospectimo from "prospectimo";
 import * as selfishness from "selfishness-analysis";
 import * as gtranslate from "translate";
+import {Injectable} from "@angular/core";
 
 export class TextAnalysisService {
 

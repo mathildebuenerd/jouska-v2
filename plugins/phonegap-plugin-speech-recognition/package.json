@@ -1,0 +1,58 @@
+{
+  "_from": "phonegap-plugin-speech-recognition@^0.3.0",
+  "_id": "phonegap-plugin-speech-recognition@0.3.0",
+  "_inBundle": false,
+  "_integrity": "sha1-x7hniJqSA5tWsasn/ywxqq11DF4=",
+  "_location": "/phonegap-plugin-speech-recognition",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "phonegap-plugin-speech-recognition@^0.3.0",
+    "name": "phonegap-plugin-speech-recognition",
+    "escapedName": "phonegap-plugin-speech-recognition",
+    "rawSpec": "^0.3.0",
+    "saveSpec": null,
+    "fetchSpec": "^0.3.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/phonegap-plugin-speech-recognition/-/phonegap-plugin-speech-recognition-0.3.0.tgz",
+  "_shasum": "c7b867889a92039b56b1ab27ff2c31aaad750c5e",
+  "_spec": "phonegap-plugin-speech-recognition@^0.3.0",
+  "_where": "H:\\WebstormProjects\\jouska-v2",
+  "author": {
+    "name": "Simon MacDonald"
+  },
+  "bugs": {
+    "url": "https://github.com/macdonst/SpeechRecognitionPlugin/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "phonegap-plugin-speech-recognition",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova Speech Recognition Plugin",
+  "homepage": "https://github.com/macdonst/SpeechRecognitionPlugin#readme",
+  "keywords": [
+    "cordova",
+    "speech",
+    "recognition",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "phonegap-plugin-speech-recognition",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macdonst/SpeechRecognitionPlugin.git"
+  },
+  "version": "0.3.0"
+}
